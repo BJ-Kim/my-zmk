@@ -1,19 +1,20 @@
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/pointing.h> // 마우스 기능을 위한 필수 헤더
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
 / {
     // UHK 콤보(동시 입력) 완벽 이식
+
     combos {
         compatible = "zmk,combos";
-        
+
         combo_tab {
             timeout-ms = <50>;
             key-positions = <0 1>; // Q + W
             bindings = <&kp TAB>;
         };
-        
+
         combo_shift_tab {
             timeout-ms = <60>;
             key-positions = <1 2>; // W + E
@@ -37,43 +38,47 @@
         compatible = "zmk,keymap";
 
         // Layer 0: 기본 배열 (A, S, D, F, E, J, K, L 길게 누르기 UHK Secondary Role 적용)
+
         default_layer {
             bindings = <
-                &kp Q        &kp W        &mt LGUI E   &kp R        &kp T             &kp Y        &kp U        &kp I        &kp O        &kp P
-                &mt LALT A   &mt LCTRL S  &mt LGUI D   &mt LSHFT F  &kp G             &kp H        &mt LSHFT J  &mt LGUI K   &mt LCTRL L  &kp SQT
-                &kp Z        &kp X        &kp C        &kp V        &kp B             &kp N        &kp M        &kp COMMA    &kp DOT      &kp FSLH
-                                                       &mo 1        &kp SPACE         &kp BSPC     &mo 3 
+&kp Q       &kp W        &mt LGUI E  &kp R        &kp T              &kp Y     &kp U        &kp I       &kp O        &kp P
+&mt LALT A  &mt LCTRL S  &mt LGUI D  &mt LSHFT F  &kp G              &kp H     &mt LSHFT J  &mt LGUI K  &mt LCTRL L  &kp SQT
+&kp Z       &kp X        &kp C       &kp V        &kp B              &kp N     &kp M        &kp COMMA   &kp DOT      &kp FSLH
+                                     &mo 1        &lt 3 BACKSPACE    &kp BSPC  &mo 3
             >;
         };
 
         // Layer 1: 방향키 및 숫자 (왼쪽 엄지 꾹)
+
         nav_layer {
             bindings = <
-                &kp N1       &kp N2       &kp N3       &kp N4       &kp N5            &kp N6       &kp N7       &kp N8       &kp N9       &kp N0
-                &trans       &trans       &trans       &trans       &trans            &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &trans
-                &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &trans            &trans       &trans       &trans       &trans       &trans
-                                                       &trans       &trans            &trans       &trans
+&kp N1      &kp N2        &kp N3        &kp N4        &kp N5    &kp N6    &kp N7    &kp N8  &kp N9     &kp N0
+&trans      &trans        &trans        &trans        &trans    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans    &trans    &trans    &trans  &trans     &trans
+                                        &trans        &trans    &trans    &trans
             >;
         };
 
         // Layer 2: 특수기호 (추가 확장용)
+
         sym_layer {
             bindings = <
-                &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PRCNT         &kp CARET    &kp AMPS     &kp STAR     &kp LPAR     &kp RPAR
-                &kp F1       &kp F2       &kp F3       &kp F4       &kp F5            &kp MINUS    &kp EQUAL    &kp GRAVE    &kp LBKT     &kp RBKT
-                &kp F6       &kp F7       &kp F8       &kp F9       &kp F10           &kp UNDER    &kp PLUS     &kp TILDE    &kp LBRC     &kp RBRC
-                                                       &trans       &trans            &trans       &trans
+&kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp STAR   &kp LPAR  &kp RPAR
+&kp F1    &kp F2  &kp F3    &kp F4    &kp F5       &kp MINUS  &kp EQUAL  &kp GRAVE  &kp LBKT  &kp RBKT
+&kp F6    &kp F7  &kp F8    &kp F9    &kp F10      &kp UNDER  &kp PLUS   &kp TILDE  &kp LBRC  &kp RBRC
+                            &trans    &trans       &trans     &trans
             >;
         };
 
         // Layer 3: MOUSE 레이어 (우측 바깥쪽 엄지 꾹 눌렀을 때 발동)
         // UHK 배열 적용: Y,H,U,O(스크롤) / I,J,K,L(이동) / M,,.(클릭)
+
         mouse_layer {
             bindings = <
-                &trans       &trans       &trans       &trans       &trans            &msc SCRL_UP   &msc SCRL_LEFT &mmv MOVE_UP   &msc SCRL_RIGHT &trans
-                &trans       &trans       &trans       &trans       &trans            &msc SCRL_DOWN &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans
-                &trans       &trans       &trans       &trans       &trans            &trans         &mkp LCLK      &mkp MCLK      &mkp RCLK       &trans
-                                                       &trans       &trans            &mkp LCLK      &trans
+&trans  &trans  &trans  &trans  &trans    &msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &trans
+&trans  &trans  &trans  &trans  &trans    &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans
+&trans  &trans  &trans  &trans  &trans    &trans          &mkp LCLK       &mkp MCLK       &mkp RCLK        &trans
+                        &trans  &trans    &mkp LCLK       &trans
             >;
         };
     };
