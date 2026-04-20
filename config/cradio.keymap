@@ -99,7 +99,7 @@
 &kp LC(MINUS)  &kp LC(ESCAPE)  &kp LC(EQUAL)  &trans     &trans    &msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &mkp MB4
 &trans         &mkp LCLK       &mkp MCLK      &mkp RCLK  &trans    &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MB5
 &trans         &trans          &trans         &trans     &trans    &trans          &mkp LCLK       &mkp MCLK       &mkp RCLK        &trans
-                                              &trans     &trans    &mkp LCLK       &trans
+                                              &trans     &trans    &mkp LCLK       &mkp RCLK
             >;
         };
     };
