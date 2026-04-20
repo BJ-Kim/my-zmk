@@ -1,4 +1,5 @@
 // 🚀 마우스 최대 속도 직접 지정 (반드시 include 헤더들보다 위에 적어야 함!) 🚀
+
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1500  // 마우스 이동 최고 속도 (기본값 보통 600, 1500~2000 추천)
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 15    // 마우스 휠 최고 속도 (기본값 보통 10)
 
@@ -8,6 +9,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 // 🚀 마우스 이동 속도 & 가속도 튜닝 🚀
+
 &mmv {
     acceleration-exponent = <2>;      // 가속도 (1은 선형 가속, 2는 2차 함수로 확 빨라짐. 0이면 가속 없이 등속도)
     time-to-max-speed-ms = <400>;     // 최고 속도에 도달하는 시간 (400ms = 0.4초 만에 최고 속도 도달)
@@ -15,12 +17,12 @@
 };
 
 // 🌀 마우스 휠 스크롤 속도 튜닝 🌀
+
 &msc {
     acceleration-exponent = <1>;      // 스크롤 가속도
     time-to-max-speed-ms = <300>;     // 스크롤 최고 속도 도달 시간
     delay-ms = <0>;                   // 스크롤 딜레이
 };
-
 
 / {
     // UHK 콤보(동시 입력) 완벽 이식
@@ -94,10 +96,10 @@
 
         mouse_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans    &msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &trans
-&trans  &trans  &trans  &trans  &trans    &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans
-&trans  &trans  &trans  &trans  &trans    &trans          &mkp LCLK       &mkp MCLK       &mkp RCLK        &trans
-                        &trans  &trans    &mkp LCLK       &trans
+&kp LC(MINUS)  &kp LC(ESCAPE)  &kp LC(EQUAL)  &trans     &trans    &msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &mkp MB4
+&trans         &mkp LCLK       &mkp MCLK      &mkp RCLK  &trans    &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MB5
+&trans         &trans          &trans         &trans     &trans    &trans          &mkp LCLK       &mkp MCLK       &mkp RCLK        &trans
+                                              &trans     &trans    &mkp LCLK       &trans
             >;
         };
     };
