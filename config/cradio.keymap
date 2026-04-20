@@ -11,7 +11,8 @@
 // 🚀 마우스 이동 속도 & 가속도 튜닝 🚀
 
 &mmv {
-    acceleration-exponent = <2>;      // 가속도 (1은 선형 가속, 2는 2차 함수로 확 빨라짐. 0이면 가속 없이 등속도)
+    trigger-period-ms = <10>;         // 움직임 업데이트 주기 (기본 16 → 10, 더 부드러워짐)
+    acceleration-exponent = <2>;      // 가속도 (0=등속, 1=선형 가속, 2=2차함수로 급가속)
     time-to-max-speed-ms = <400>;     // 최고 속도에 도달하는 시간 (400ms = 0.4초 만에 최고 속도 도달)
     delay-ms = <0>;                   // 키를 누르고 마우스가 움직이기 시작할 때까지의 딜레이
 };
@@ -19,6 +20,7 @@
 // 🌀 마우스 휠 스크롤 속도 튜닝 🌀
 
 &msc {
+    trigger-period-ms = <10>;         // 스크롤 업데이트 주기
     acceleration-exponent = <1>;      // 스크롤 가속도
     time-to-max-speed-ms = <300>;     // 스크롤 최고 속도 도달 시간
     delay-ms = <0>;                   // 스크롤 딜레이
