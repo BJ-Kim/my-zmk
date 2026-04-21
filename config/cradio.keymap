@@ -34,6 +34,18 @@
 };
 
 / {
+    behaviors {
+        // hold → mo, tap → sticky shift (한글 쌍자음 타이핑용)
+        lt_sk: layer_tap_sticky {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            flavor = "balanced";
+            bindings = <&mo>, <&sk>;
+        };
+    };
+
     // UHK 콤보(동시 입력) 완벽 이식
 
     combos {
@@ -74,7 +86,7 @@
 &kp Q       &kp W        &mt LGUI E  &kp R        &kp T              &kp Y      &kp U        &kp I       &kp O        &kp P
 &mt LALT A  &mt LCTRL S  &mt LGUI D  &mt LSHFT F  &kp G              &kp H      &mt LSHFT J  &mt LGUI K  &mt LCTRL L  &kp SQT
 &kp Z       &kp X        &kp C       &kp V        &kp B              &kp N      &kp M        &kp COMMA   &kp DOT      &kp FSLH
-                                     &mo 1        &lt 3 BACKSPACE    &kp SPACE  &lt 2 F18
+                                     &lt_sk 1 LSHFT  &lt 3 BACKSPACE    &kp SPACE  &lt 2 F18
             >;
         };
 
