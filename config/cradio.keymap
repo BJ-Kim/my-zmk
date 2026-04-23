@@ -75,6 +75,11 @@
             key-positions = <16 18>; // J + L
             bindings = <&kp ENTER>;
         };
+
+        AS_LCTRL {
+            bindings = <&kp LCTRL>;
+            key-positions = <10 11>;
+        };
     };
 
     keymap {
