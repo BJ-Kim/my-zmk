@@ -45,6 +45,34 @@
             flavor = "balanced";
             bindings = <&mo>, <&sk>;
         };
+
+        // 탭 후 홀드하면 tap 동작 반복 (백스페이스 연타)
+        lt_bspc: layer_tap_backspace {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&kp>;
+        };
+    };
+
+    macros {
+        mc_vim_save: mc_vim_save {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&kp COLON &kp W &kp ENTER>;
+        };
+
+        mc_vim_qa: mc_vim_qa {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&kp COLON &kp Q &kp A &kp ENTER>;
+        };
     };
 
     // UHK 콤보(동시 입력) 완벽 이식
@@ -134,7 +162,28 @@
             bindings = <&kp LSHFT>;
             key-positions = <18 19>;
         };
-        
+
+        combo_colon {
+            timeout-ms = <40>;
+            layers = <0>;
+            key-positions = <25 26>;
+            bindings = <&kp COLON>;
+        };
+
+        combo_vim_save {
+            timeout-ms = <40>;
+            layers = <0>;
+            key-positions = <24 25>;
+            bindings = <&mc_vim_save>;
+        };
+
+        combo_vim_qa {
+            timeout-ms = <40>;
+            layers = <0>;
+            key-positions = <23 26>;
+            bindings = <&mc_vim_qa>;
+        };
+
     };
 
     keymap {
@@ -155,7 +204,7 @@
 &kp Q  &kp W  &kp E  &kp R       &kp T          &kp Y      &kp U    &kp I      &kp O    &kp P
 &kp A  &kp S  &kp D  &kp F       &kp G          &kp H      &kp J    &kp K      &kp L    &kp SEMI
 &kp Z  &kp X  &kp C  &kp V       &kp B          &kp N      &kp M    &kp COMMA  &kp DOT  &kp FSLH
-                                     &lt_sk 1 LSHFT  &lt 3 BACKSPACE    &kp SPACE  &lt 2 F18
+                                     &lt_sk 1 LSHFT  &lt_bspc 3 BACKSPACE    &kp SPACE  &lt 2 F18
             >;
         };
 
