@@ -3,12 +3,12 @@
 // #define ZMK_MOUSE_DEFAULT_SCRL_VAL 15    // 마우스 휠 최고 속도 (기본값 보통 10)
 // v0.3 매크로 이름으로 변경
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 2000   // 기본 속도 낮춤 (정밀 이동용)
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 3500   // 최고 속도 (이전 2000 → 3500)
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 15
-#define FAST_UP    MOVE_Y(-3500)
-#define FAST_DOWN  MOVE_Y(3500)
-#define FAST_LEFT  MOVE_X(-3500)
-#define FAST_RIGHT MOVE_X(3500)
+#define FAST_UP    MOVE_Y(-6000)
+#define FAST_DOWN  MOVE_Y(6000)
+#define FAST_LEFT  MOVE_X(-6000)
+#define FAST_RIGHT MOVE_X(6000)
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -18,9 +18,9 @@
 // 🚀 마우스 이동 속도 & 가속도 튜닝 🚀
 
 &mmv {
-    trigger-period-ms = <8>;         // 움직임 업데이트 주기 (기본 16 → 10, 더 부드러워짐)
-    acceleration-exponent = <2>;      // 가속도 (0=등속, 1=선형 가속, 2=2차함수로 급가속)
-    time-to-max-speed-ms = <300>;     // 최고 속도에 도달하는 시간 (400ms = 0.4초 만에 최고 속도 도달)
+    trigger-period-ms = <5>;         // 업데이트 주기 (8 → 5, 끊김 완화)
+    acceleration-exponent = <1>;      // 가속도 (2차→선형, 초반 속도 즉시 반응)
+    time-to-max-speed-ms = <400>;     // 최고 속도 도달 시간 (300 → 400, 가속 곡선 살짝 완만하게)
     delay-ms = <0>;                   // 키를 누르고 마우스가 움직이기 시작할 때까지의 딜레이
 };
 
