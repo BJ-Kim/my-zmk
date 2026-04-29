@@ -184,6 +184,27 @@
             bindings = <&mc_vim_qa>;
         };
 
+        combo_screenshot {
+            timeout-ms = <60>;
+            layers = <0>;
+            key-positions = <1 2 3>; // W + E + R → Cmd+Ctrl+Shift+4 (맥 스샷 클립보드 복사)
+            bindings = <&kp LG(LC(LS(N4)))>;
+        };
+
+        combo_esc_wr {
+            timeout-ms = <50>;
+            layers = <0>;
+            key-positions = <1 3>; // W + R → ESC
+            bindings = <&kp ESC>;
+        };
+
+        combo_hold_cmd_shift {
+            timeout-ms = <60>;
+            layers = <0>;
+            key-positions = <16 17 18>; // J + K + L → 누르고 있는 동안 Cmd+Shift 유지
+            bindings = <&kp LS(LGUI)>;
+        };
+
     };
 
     keymap {
@@ -212,10 +233,10 @@
 
         fn_layer {
             bindings = <
-&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5    &kp F6  &kp F7    &kp UP_ARROW  &trans     &trans
-&trans        &trans        &trans        &trans        &trans    &trans  &kp LEFT  &kp DOWN      &kp RIGHT  &trans
-&bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans    &trans  &trans    &trans        &trans     &trans
-                                          &trans        &trans    &trans  &trans
+&kp LG(Q)  &kp LG(W)  &kp LG(E)  &kp LG(R)  &kp LG(T)    &kp F6      &kp F7        &kp UP_ARROW  &trans        &trans
+&kp LG(A)  &kp LG(S)  &kp LG(D)  &kp LG(F)  &kp LG(G)    &trans      &kp LEFT      &kp DOWN      &kp RIGHT     &trans
+&kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp LG(B)    &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans
+                                 &trans     &trans       &trans      &trans
             >;
         };
 
