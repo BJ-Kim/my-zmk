@@ -205,6 +205,11 @@
             key-positions = <16 17 18>; // J + K + L → 누르고 있는 동안 Cmd+Shift 유지
             bindings = <&kp LS(LGUI)>;
         };
+
+        chrome_developer_tool {
+            bindings = <&kp LG(LA(I))>;
+            key-positions = <27 28 29>;
+        };
     };
 
     keymap {
