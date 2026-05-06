@@ -28,8 +28,8 @@
 
 &msc {
     trigger-period-ms = <8>;         // 스크롤 업데이트 주기
-    acceleration-exponent = <1>;      // 스크롤 가속도
-    time-to-max-speed-ms = <300>;     // 스크롤 최고 속도 도달 시간
+    acceleration-exponent = <0>;      // 가속도 없음 → 첫 입력부터 최고 속도 (즉답)
+    time-to-max-speed-ms = <120>;     // 보조용 (exponent=0이면 거의 영향 없음)
     delay-ms = <0>;                   // 스크롤 딜레이
 };
 
