@@ -164,11 +164,11 @@
             key-positions = <18 19>;
         };
 
-        combo_colon {
+        combo_enter_nm {
             timeout-ms = <40>;
             layers = <0>;
-            key-positions = <25 26>;
-            bindings = <&kp COLON>;
+            key-positions = <25 26>; // N + M → ENTER
+            bindings = <&kp ENTER>;
         };
 
         combo_vim_save {
@@ -197,6 +197,27 @@
             layers = <0>;
             key-positions = <1 3>; // W + R → ESC
             bindings = <&kp ESC>;
+        };
+
+        combo_esc_rt {
+            timeout-ms = <50>;
+            layers = <0>;
+            key-positions = <3 4>; // R + T → ESC
+            bindings = <&kp ESC>;
+        };
+
+        combo_esc_yu {
+            timeout-ms = <50>;
+            layers = <0>;
+            key-positions = <5 6>; // Y + U → ESC
+            bindings = <&kp ESC>;
+        };
+
+        combo_enter_vb {
+            timeout-ms = <40>;
+            layers = <0>;
+            key-positions = <23 24>; // V + B → ENTER
+            bindings = <&kp ENTER>;
         };
 
         combo_hold_cmd_shift {
