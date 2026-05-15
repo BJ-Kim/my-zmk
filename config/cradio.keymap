@@ -103,12 +103,6 @@
             bindings = <&kp LS(TAB)>;
         };
 
-        combo_esc {
-            timeout-ms = <70>;
-            key-positions = <6 8>; // U + O
-            bindings = <&kp ESC>;
-        };
-
         combo_enter {
             timeout-ms = <40>;
             key-positions = <16 18>; // J + L
@@ -218,6 +212,13 @@
             layers = <0>;
             key-positions = <23 24>; // V + B → ENTER
             bindings = <&kp ENTER>;
+        };
+
+        combo_caps_lock {
+            timeout-ms = <60>;
+            layers = <0>;
+            key-positions = <20 21 22>; // Z + X + C → CAPS LOCK
+            bindings = <&kp CAPSLOCK>;
         };
 
         combo_hold_cmd_shift {
