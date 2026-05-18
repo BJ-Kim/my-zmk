@@ -33,6 +33,13 @@
     delay-ms = <0>;                   // 스크롤 딜레이
 };
 
+&mt {
+    flavor = "balanced";
+    tapping-term-ms = <180>;
+    quick-tap-ms = <150>;
+    require-prior-idle-ms = <125>;
+};
+
 / {
     behaviors {
         // hold → mo, tap → sticky shift (한글 쌍자음 타이핑용)
@@ -251,7 +258,7 @@
             bindings = <
 &kp Q  &kp W  &kp E  &kp R           &kp T                   &kp Y      &kp U      &kp I      &kp O    &kp P
 &kp A  &kp S  &kp D  &kp F           &kp G                   &kp H      &kp J      &kp K      &kp L    &kp SEMI
-&kp Z  &kp X  &kp C  &kp V           &kp B                   &kp N      &kp M      &kp COMMA  &kp DOT  &kp FSLH
+&kp Z  &kp X  &kp C  &kp V           &kp B                   &kp N      &kp M      &kp COMMA  &kp DOT  &mt LSHFT FSLH
                      &lt_sk 1 LSHFT  &lt_bspc 3 BACKSPACE    &kp SPACE  &lt 2 F18
             >;
         };
