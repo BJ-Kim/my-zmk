@@ -245,23 +245,23 @@
         compatible = "zmk,keymap";
 
         // Layer 0: 기본 배열 (A, S, D, F, E, J, K, L 길게 누르기 UHK Secondary Role 적용)
-        //         default_layer {
-        //             bindings = <
-        // &kp Q       &kp W        &mt LGUI E  &kp R           &kp T              &kp Y      &kp U        &kp I       &kp O        &kp P
-        // &mt LALT A  &mt LCTRL S  &mt LGUI D  &mt LSHFT F     &kp G              &kp H      &mt LSHFT J  &mt LGUI K  &mt LCTRL L  &kp SEMI
-        // &kp Z       &kp X        &kp C       &kp V           &kp B              &kp N      &kp M        &kp COMMA   &kp DOT      &kp FSLH
-        //                                      &lt_sk 1 LSHFT  &lt 3 BACKSPACE    &kp SPACE  &lt 2 F18
-        //             >;
-        //         };
-
         default_layer {
             bindings = <
-&kp Q  &kp W  &kp E  &kp R           &kp T                   &kp Y      &kp U      &kp I      &kp O    &kp P
-&kp A  &kp S  &kp D  &kp F           &kp G                   &kp H      &kp J      &kp K      &kp L    &kp SEMI
-&kp Z  &kp X  &kp C  &kp V           &kp B                   &kp N      &kp M      &kp COMMA  &kp DOT  &mt LSHFT FSLH
-                     &lt_sk 1 LSHFT  &lt_bspc 3 BACKSPACE    &kp SPACE  &lt 2 F18
+&kp Q       &kp W        &mt LGUI E  &kp R           &kp T              &kp Y      &kp U        &kp I       &kp O        &kp P
+&mt LALT A  &mt LCTRL S  &mt LGUI D  &mt LSHFT F     &kp G              &kp H      &mt LSHFT J  &mt LGUI K  &mt LCTRL L  &kp SEMI
+&kp Z       &kp X        &kp C       &kp V           &kp B              &kp N      &kp M        &kp COMMA   &kp DOT      &kp FSLH
+                                     &lt_sk 1 LSHFT  &lt 3 BACKSPACE    &kp SPACE  &lt 2 F18
             >;
         };
+
+        //         default_layer {
+        //             bindings = <
+        // &kp Q  &kp W  &kp E  &kp R           &kp T                   &kp Y      &kp U      &kp I      &kp O    &kp P
+        // &kp A  &kp S  &kp D  &kp F           &kp G                   &kp H      &kp J      &kp K      &kp L    &kp SEMI
+        // &kp Z  &kp X  &kp C  &kp V           &kp B                   &kp N      &kp M      &kp COMMA  &kp DOT  &mt LSHFT FSLH
+        //                      &lt_sk 1 LSHFT  &lt_bspc 3 BACKSPACE    &kp SPACE  &lt 2 F18
+        //             >;
+        //         };
 
         // Layer 1: 방향키 및 숫자 (왼쪽 엄지 꾹)
 
